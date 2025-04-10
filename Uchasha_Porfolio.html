@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Uchasha Mukherjee | Portfolio</title>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg-color: #f4f6f8;
+      --text-color: #1a1a1a;
+      --accent-color: #0077b6;
+      --header-color: #ffffff;
+    }
+
+    [data-theme="dark"] {
+      --bg-color: #121212;
+      --text-color: #e0e0e0;
+      --accent-color: #0077b6;
+      --header-color: #1e1e2f;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: 'Montserrat', sans-serif;
+    }
+
+    body {
+      background: var(--bg-color);
+      color: var(--text-color);
+      line-height: 1.6;
+      transition: background 0.3s ease, color 0.3s ease;
+      display: flex;
+    }
+
+    aside {
+      width: 250px;
+      background: var(--accent-color);
+      padding: 1rem;
+      position: fixed;
+      top: 0;
+      bottom: 0;
+      color: var(--header-color);
+      overflow-y: auto;
+    }
+
+    aside h2 {
+      font-size: 1.5rem;
+      margin-bottom: 1rem;
+    }
+
+    aside a {
+      display: block;
+      margin: 0.5rem 0;
+      color: var(--header-color);
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    aside a:hover {
+      text-decoration: underline;
+    }
+
+    main {
+      margin-left: 270px;
+      width: 100%;
+    }
+
+    header, section {
+      padding: 2rem;
+      max-width: 1000px;
+      margin: auto;
+    }
+
+    header {
+      background: var(--accent-color);
+      color: var(--header-color);
+      text-align: center;
+      padding: 4rem 2rem;
+      border-radius: 0 0 2rem 2rem;
+      position: relative;
+    }
+
+    header .nav-bar {
+      position: absolute;
+      top: 20px;
+      left: 20px;
+    }
+
+    .nav-bar a {
+      margin: 0 0.5rem;
+      color: var(--header-color);
+      text-decoration: none;
+      font-weight: bold;
+      font-size: 0.9rem;
+    }
+
+    .nav-bar a:hover {
+      text-decoration: underline;
+    }
+
+    header h1 {
+      font-size: 3rem;
+      margin-top: 2rem;
+    }
+
+    header p {
+      font-size: 1.2rem;
+      margin-top: 0.5rem;
+    }
+
+    .toggle-theme {
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      background: white;
+      border: none;
+      padding: 0.4rem 0.8rem;
+      border-radius: 2rem;
+      cursor: pointer;
+      font-weight: bold;
+      color: var(--accent-color);
+    }
+
+    section h2 {
+      border-bottom: 2px solid var(--accent-color);
+      padding-bottom: 0.5rem;
+      margin-bottom: 1rem;
+    }
+
+    ul {
+      margin-left: 1.2rem;
+    }
+
+    .projects a, .links a {
+      display: block;
+      margin: 0.5rem 0;
+      color: #0056b3;
+      text-decoration: none;
+    }
+
+    .projects a:hover, .links a:hover {
+      text-decoration: underline;
+    }
+
+    .badges img {
+      margin: 0.4rem;
+    }
+
+    footer {
+      text-align: center;
+      padding: 1rem;
+      background: var(--accent-color);
+      color: var(--header-color);
+      margin-top: 2rem;
+      border-radius: 1rem 1rem 0 0;
+    }
+
+    .collapsible {
+      cursor: pointer;
+      background-color: var(--accent-color);
+      color: white;
+      padding: 0.5rem;
+      margin: 0.5rem 0;
+      border: none;
+      border-radius: 5px;
+      font-weight: bold;
+    }
+
+    .content {
+      padding: 0 1rem;
+      display: none;
+    }
+
+    .download-resume {
+      margin-top: 1rem;
+      text-align: center;
+    }
+
+    .download-resume a {
+      background: var(--header-color);
+      color: var(--accent-color);
+      padding: 0.6rem 1.2rem;
+      border-radius: 0.5rem;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    @media (max-width: 768px) {
+      aside {
+        position: static;
+        width: 100%;
+        margin-bottom: 1rem;
+      }
+      
+    html {
+    scroll-behavior: smooth;
+    }
+
+      main {
+        margin-left: 0;
+      }
+
+      header h1 {
+        font-size: 2rem;
+        margin-top: 3rem;
+      }
+
+      header p {
+        font-size: 1rem;
+      }
+
+      .nav-bar {
+        position: static;
+        margin-top: 0.5rem;
+      }
+
+      .nav-bar a {
+        display: inline-block;
+        margin: 0.3rem;
+        font-size: 0.8rem;
+      }
+
+      section {
+        padding: 1rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <header>
+      <div class="nav-bar">
+        <a href="#about">About</a>
+        <a href="#skills">Skills</a>
+        <a href="#projects">Projects</a>
+        <a href="#dashboards">Dashboards</a>
+        <a href="#certifications">Certifications</a>
+        <a href="#experience">Experience</a>
+        <a href="#contact">Contact</a>
+      </div>
+      <button class="toggle-theme" onclick="toggleTheme()">🌓 Toggle Theme</button>
+      <h1>📊 Hello, I'm <strong>Uchasha Mukherjee</strong></h1>
+      <p><em>Decoding data to drive impact | Data Analyst | CSE @ MIT ADT</em></p>
+      <div class="download-resume">
+        <a href="https://drive.google.com/file/d/1ghmH6iTn0hKRQP8fybiWIIFZfIiSdXk0/view?usp=sharing" target="_blank">📄 Download My Resume</a>
+      </div>
+    </header>
+
+    <section id="about">
+      <h2>💡 About Me</h2>
+      <p>
+        🎓 Currently pursuing my <strong>B.Tech in Computer Science</strong> from <strong>MIT ADT University</strong><br>
+        🤖 Enthusiast in <strong>Artificial Intelligence</strong>, <strong>Machine Learning</strong>, and <strong>Data Analytics</strong><br>
+        📊 Career Goal: To pursue an <strong>MBA in Business Analytics</strong> and shape the future with data<br>
+        🧠 I thrive on solving <em>real-world problems</em> using innovative, data-driven approaches<br>
+        🌟 Constantly learning, creating, and seeking ways to make a <strong>meaningful impact</strong><br>
+        🔍 Skilled in <strong>end-to-end data workflows</strong>: from data wrangling to storytelling dashboards and predictive modeling.
+      </p>
+    </section>
+
+    <section id="languages">
+        <h2>🌍 Languages I Speak</h2>
+        <p><code>English</code> | <code>Hindi</code> | <code>Bengali</code> | <code>French (Basic)</code></p>
+      </section>
+
+      <section id="Internship">
+        <h2>💼 Internship Experience</h2>
+        <button class="collapsible">Expand Section</button>
+        <div class="content">
+        <p>
+          🔹 <strong>AI/ML Intern – Intrainz</strong><br>
+          &nbsp;&nbsp;&nbsp;&nbsp;• Built a <em>Price Comparison System</em> using ML models to streamline consumer decisions
+        </p>
+        <p>
+          🔹 <strong>Data Analyst Intern – MedTourEasy</strong><br>
+          &nbsp;&nbsp;&nbsp;&nbsp;• working on <em>Cosmetic Product recommendation system</em> using Python to enhance personalized user experience and improve product engagement.
+        </p>
+      </section>
+    
+      <section id="skills">
+        <h2>🧠 Skills & Technologies</h2>
+        <button class="collapsible">Expand Section</button>
+        <div class="content">
+          <ul>
+            <li><strong>Languages:</strong> Python, R, C, C++, JavaScript, HTML, CSS</li>
+            <li><strong>Libraries & Frameworks:</strong> Pandas, NumPy, Matplotlib, Seaborn, Scikit-learn, TensorFlow, Keras</li>
+            <li><strong>Data & Visualization:</strong> Power BI, Tableau, Excel, IBM Cognos</li>
+            <li><strong>AI & ML:</strong> Neural Networks, Transfer Learning, SVM, KNN, CNN</li>
+            <li><strong>Databases:</strong> SQL, MySQL</li>
+            <li><strong>Tools:</strong> Anaconda, Jupyter Notebook, IBM Watson Studio, AWS, CV Studio, VS Code</li>
+            <li><strong>Others:</strong> GitHub, Streamlit (basic), Web Deployment (IBM Cloud, Code Engine)</li>
+          </ul>
+        </div>
+      </section>
+    
+      <section id="Projects">
+        <h2>🚀 Projects</h2>
+        <button class="collapsible">Expand Section</button>
+        <div class="content">
+        <ul>
+          <li><strong>DashLearn – AI-Powered Learning Platform:</strong> Personalized course recommendations, badges, and learning paths powered by AI</li>
+          <li><strong>Diabetes Prediction:</strong> Used SVM to achieve 78% train and 75% test accuracy</li>
+          <li><strong>Indoor Navigation System (RTLS):</strong> Real-time tracking for better location services</li>
+          <li><strong>Malware Detection:</strong> KNN & SVM models for cybersecurity threat detection</li>
+          <li><strong>Keratoconus Detection:</strong> ML-based early diagnosis for eye diseases using imaging data</li>
+        </ul>
+      </section>
+    
+      <section id="Dashboards">
+        <h2>📊 Data Dashboards</h2>
+        <button class="collapsible">Expand Section</button>
+        <div class="content">
+        <ul>
+          <li><strong>Stock Market Trends:</strong> Moving averages, trends, forecasts (Tableau)</li>
+          <li><strong>World Happiness Report:</strong> GDP, social support, freedom analysis (Tableau)</li>
+          <li><strong>UK Bank Departures:</strong> Churn analytics and regional patterns (Tableau)</li>
+          <li><strong>Brazil Tourism Trends:</strong> Seasonal & demographic patterns (Tableau)</li>
+          <li><strong>Sales Executive Summary:</strong> Business insights using Power BI</li>
+          <li><strong>Car Sales & Service Insights:</strong> Dashboard using IBM Cognos</li>
+          <li><strong>Car Dealership Report:</strong> Excel-based interactive dashboard</li>
+          <li><strong>Supermarket Sales:</strong> Customer insights and payment trends (Power BI)</li>
+        </ul>
+        <p><strong>🔗 Tableau Projects:</strong> <a href="https://public.tableau.com/app/profile/uchasha.mukherjee/vizzes" target="_blank">Browse All vizzes</a></p>
+      </section>
+    
+      <section id="certifications">
+        <h2>🏅 Certifications</h2>
+        <button class="collapsible">Expand Section</button>
+        <div class="content">
+          <ul>
+            <li><strong>Google Data Analytics Professional Certificate</strong></li>
+            <li><strong>IBM Data Science Professional Certificate</strong></li>
+            <li><strong>PL-300: Microsoft Power BI Data Analyst Associate</strong></li>
+            <li><strong>Data Analyst Career Essentials – LinkedIn + Microsoft</strong></li>
+            <li><strong>Excel Basics & Advanced – Great Learning / Coursera</strong></li>
+            <li><strong>Tableau & Power BI for Beginners – Udemy</strong></li>
+          </ul>
+          <p><strong>🔗 View All on Credly:</strong> <a href="https://www.credly.com/users/uchasha-mukherjee" target="_blank">My Credly Profile</a></p>
+        </div>
+      </section>
+
+    
+      <section id="contact">
+        <h2>📬 Connect With Me</h2>
+        <ul>
+          <li><strong>Email:</strong> uchasha.mukherjee@gmail.com</li>
+          <li><a href="https://www.linkedin.com/in/uchasha-mukherjee-409939284/" target="_blank"><img src="https://img.shields.io/badge/LinkedIn-Uchasha%20Mukherjee-blue?style=for-the-badge&logo=linkedin"></a></li>
+          <li><a href="https://github.com/uchasha2825" target="_blank"><img src="https://img.shields.io/badge/GitHub-uchasha2825-black?style=for-the-badge&logo=github"></a></li>
+          <li><a href="https://public.tableau.com/app/profile/uchasha.mukherjee/vizzes" target="_blank"><img src="https://img.shields.io/badge/Tableau-Dashboards-orange?style=for-the-badge&logo=tableau"></a></li>
+        </ul>
+      </section>
+
+    <footer>
+      &copy; 2025 Uchasha Mukherjee | 
+      🌟 “Driven by curiosity, powered by data.”
+    </footer>
+  </main>
+
+  <script>
+    const collapsibles = document.querySelectorAll(".collapsible");
+    collapsibles.forEach(button => {
+      button.addEventListener("click", () => {
+        const content = button.nextElementSibling;
+        content.style.display = content.style.display === "block" ? "none" : "block";
+      });
+    });
+  
+    function toggleTheme() {
+      const html = document.documentElement;
+      const currentTheme = html.getAttribute("data-theme");
+      html.setAttribute("data-theme", currentTheme === "dark" ? "light" : "dark");
+    }
+  </script>
+  
+</body>
+</html>
